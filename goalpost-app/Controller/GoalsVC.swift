@@ -37,6 +37,23 @@ class GoalsVC: UIViewController {
 }
 
 extension GoalsVC{
+    func setProcess(atIndexPath indexPath: IndexPath){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        var chosenGoal = goals[indexPath.row]
+        
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+            chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        } else {
+            return
+        }
+        
+        do{
+            try managedContext.save()
+            debugPrint("Set progress successfully!")
+        }catch{
+            debugPrint("Cannot setProgree \(error.localizedDescription)")
+        }
+    }
     func fetch(completion: (_ complete: Bool) -> ()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         let fetchRequest : NSFetchRequest<Goal> = NSFetchRequest<Goal>(entityName: "Goal")
@@ -106,9 +123,15 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource{
             self.fetchCoreDataObject()
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
+        
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            self.setProcess(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+        addAction.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.662745098, blue: 0.2666666667, alpha: 1)
         deleteAction.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         
-        return [deleteAction]
+        return [deleteAction, addAction]
     }
     
 }

@@ -132,15 +132,36 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bok-cX-p8d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPr-n8-mbD">
+                                                            <rect key="frame" x="59.5" y="14.5" width="256.5" height="41"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="orange"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="1gs-R9-oYJ"/>
+                                                        <constraint firstItem="dPr-n8-mbD" firstAttribute="centerX" secondItem="bok-cX-p8d" secondAttribute="centerX" id="ntk-Tg-dcU"/>
+                                                        <constraint firstItem="dPr-n8-mbD" firstAttribute="centerY" secondItem="bok-cX-p8d" secondAttribute="centerY" id="tBe-yn-5Jf"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1iQ-0b-j95" firstAttribute="leading" secondItem="JnD-lH-yzz" secondAttribute="leading" constant="15" id="0Ih-L7-Qdf"/>
+                                                <constraint firstItem="bok-cX-p8d" firstAttribute="leading" secondItem="JnD-lH-yzz" secondAttribute="leading" id="3Ul-Vi-Tft"/>
                                                 <constraint firstItem="DNe-Ui-3Sd" firstAttribute="trailing" secondItem="JnD-lH-yzz" secondAttribute="trailingMargin" constant="8" id="DFM-9W-jc7"/>
+                                                <constraint firstItem="bok-cX-p8d" firstAttribute="top" secondItem="JnD-lH-yzz" secondAttribute="top" id="Db5-I5-3gT"/>
                                                 <constraint firstItem="DNe-Ui-3Sd" firstAttribute="centerY" secondItem="1iQ-0b-j95" secondAttribute="centerY" id="K5S-Oe-nZt"/>
                                                 <constraint firstItem="1iQ-0b-j95" firstAttribute="centerY" secondItem="JnD-lH-yzz" secondAttribute="centerY" id="iau-z8-CFW"/>
+                                                <constraint firstAttribute="trailing" secondItem="bok-cX-p8d" secondAttribute="trailing" id="veQ-sP-b1j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="goalCompletionView" destination="bok-cX-p8d" id="pZU-8H-8bi"/>
                                             <outlet property="goalDescriptionLbl" destination="t3u-8T-C3p" id="tAz-99-hPR"/>
                                             <outlet property="goalProgressLbl" destination="DNe-Ui-3Sd" id="5hi-Qk-kHl"/>
                                             <outlet property="goalTypeLbl" destination="AXu-On-cGJ" id="HWd-Xt-3VK"/>
