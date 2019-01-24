@@ -19,8 +19,12 @@ class GoalsVC: UIViewController {
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func addGoalBtnWasPressed(_ sender: Any) {
+    }
+    
+    @IBAction func unwindToGoalsVC(sender: UIStoryboardSegue){
+        
     }
     
 }

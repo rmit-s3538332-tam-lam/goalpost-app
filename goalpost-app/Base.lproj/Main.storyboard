@@ -413,11 +413,13 @@
                         <outlet property="backBtn" destination="x5x-TX-a7N" id="sYv-uh-tQD"/>
                         <outlet property="createGoalBtn" destination="leT-fu-1NB" id="abF-1c-AR5"/>
                         <outlet property="pointsTextField" destination="KUT-ZQ-FHW" id="ogZ-Xn-XeK"/>
+                        <segue destination="M5a-At-jfi" kind="unwind" identifier="unwindToGoalsVC" unwindAction="unwindToGoalsVCWithSender:" id="2RA-aI-ylm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIb-Cj-dTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M5a-At-jfi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1608.8" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1686" y="119"/>
         </scene>
     </scenes>
     <resources>

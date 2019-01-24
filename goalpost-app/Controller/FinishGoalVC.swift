@@ -20,6 +20,7 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         pointsTextField.delegate = self
         // Do any additional setup after loading the view.
     }
+
     func initData(description: String, goalType: GoalType){
         self.goalDescription = description
         self.goalType = goalType
@@ -30,10 +31,10 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
-        if pointsTextField.text != ""{
+        if pointsTextField.text != "" && pointsTextField.text != "0"{
             self.save{(complete) in
                 if complete {
-                    dismiss(animated: true, completion: nil)
+                    performSegue(withIdentifier: "unwindToGoalsVC", sender: nil)
                 }
             }
         }
